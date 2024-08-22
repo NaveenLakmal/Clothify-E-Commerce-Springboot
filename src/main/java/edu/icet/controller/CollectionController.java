@@ -31,4 +31,9 @@ public class CollectionController {
     public List<CollectionDto> getAllCollection(){
         return collectionService.getAll();
     }
+
+    @PatchMapping("update/{id}")
+    public boolean updateCollectionById(@PathVariable int id,@RequestBody CollectionDto collectionDto){
+        return  collectionService.updateCollectionById(id,collectionDto);
+    }
 }

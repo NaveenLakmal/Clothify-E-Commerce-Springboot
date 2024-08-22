@@ -30,6 +30,9 @@ public class CollectionRepositoryImpl implements CollectionRepository {
     @Value("${collection.getAll}")
     private String getAllSql;
 
+    @Value("${collection.update}")
+    private String updateCollectionSql;
+
 
 
     @Override
@@ -79,6 +82,23 @@ public class CollectionRepositoryImpl implements CollectionRepository {
     public List<CollectionDto> getAll() {
         List<CollectionDto> collections = jdbcTemplate.query(getAllSql, getCollectionRowMapper());
         return  collections;
+    }
+
+    @Override
+    public boolean update(int id,CollectionDto collectionDto) {
+        try {
+        int response = jdbcTemplate.update(
+                updateCollectionSql,
+                collectionDto.getName(),
+                id  //ID is used to identify the record to update
+        );
+        return response > 0 ? true:false;
+
+        } catch (DataAccessException e) {
+            // log.error("Failed to update collection", e);
+            throw new RuntimeException("Failed to update collection", e);
+        }
+
     }
 
 

@@ -11,4 +11,6 @@ public interface CollectionService {
     boolean delete(int id);
 
     List<CollectionDto> getAll();
+
+    boolean updateCollectionById(int id,CollectionDto collectionDto);
 }

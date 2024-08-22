@@ -34,6 +34,11 @@ public class CollectionServiceImpl implements CollectionService {
         return collectionRepository.getAll();
     }
 
+    @Override
+    public boolean updateCollectionById(int id,CollectionDto collectionDto) {
+        return collectionRepository.update(id,collectionDto);
+    }
+
     private int generateId() {
         Integer id= collectionRepository.getMaxId();
 

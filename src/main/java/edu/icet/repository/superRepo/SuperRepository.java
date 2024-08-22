@@ -11,4 +11,6 @@ public interface SuperRepository<T> {
     boolean delete(int id);
 
     List<CollectionDto> getAll();
+
+    boolean update(int id,T dto);
 }

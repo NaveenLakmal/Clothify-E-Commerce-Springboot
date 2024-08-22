@@ -10,5 +10,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CollectionDto {
+
+    private int id;
+
     private String name;
 }

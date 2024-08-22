@@ -1,6 +1,6 @@
 package edu.icet.controller;
 
-import edu.icet.entity.Collection;
+import edu.icet.dto.CollectionDto;
 import edu.icet.service.CollectionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -16,7 +16,7 @@ public class CollectionController {
 
     @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
-    public void addCollection(@RequestBody Collection collectionDto){
-        collectionService.addCollection(collectionDto);
+    public boolean addCollection(@RequestBody CollectionDto collectionDto){
+       return collectionService.addCollection(collectionDto);
     }
 }

@@ -1,7 +1,8 @@
 package edu.icet.service;
 
-import edu.icet.entity.Collection;
+import edu.icet.dto.CollectionDto;
+
 
 public interface CollectionService {
-    void addCollection(Collection collection);
+    boolean addCollection(CollectionDto collection);
 }

@@ -1,7 +1,14 @@
 package edu.icet.repository;
 
-import edu.icet.entity.Collection;
-import org.springframework.data.repository.CrudRepository;
+import edu.icet.dto.CollectionDto;
 
-public interface CollectionRepository extends CrudRepository<Collection,Long> {
+
+import java.util.List;
+
+
+public interface CollectionRepository {
+
+ Integer getMaxId();
+
+ boolean save(CollectionDto collectionDto,int id);
 }

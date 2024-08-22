@@ -1,22 +1,33 @@
 package edu.icet.service.impl;
 
-import edu.icet.entity.Collection;
+import edu.icet.dto.CollectionDto;
+
 import edu.icet.repository.CollectionRepository;
 import edu.icet.service.CollectionService;
 import lombok.RequiredArgsConstructor;
-import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @Service
 public class CollectionServiceImpl implements CollectionService {
 
-    final ModelMapper modelMapper;
+   // final ModelMapper modelMapper;
     final CollectionRepository collectionRepository;
+
     @Override
-    public void addCollection(Collection collectionDto) {
-        Collection collection = modelMapper.map(collectionDto, Collection.class);
-        collectionRepository.save(collection);
+    public boolean addCollection(CollectionDto collectionDto) {
+        int id=generateId();
+        return collectionRepository.save(collectionDto,id);
+
+    }
+
+    private int generateId() {
+        Integer id= collectionRepository.getMaxId();
+
+        return (id != null) ? id + 1 : 1;
+
 
     }
 }

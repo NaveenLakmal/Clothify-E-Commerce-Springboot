@@ -60,3 +60,5 @@ c
 3src/main/java/edu/icet/service/superBo/SuperBo.java,3\1\31e9c8c7c6d5d35b7e7993ee16c6648453a86ef5
 p
 @src/main/java/edu/icet/repository/superRepo/SuperRepository.java,d\d\ddb70912bb9edfcd51367f68e903774944b720a8
+o
+?src/main/java/edu/icet/repository/impl/CollectionRowMapper.java,8\6\862e159ae673d551ceb1b025084424d03249c0b7

@@ -23,20 +23,23 @@ public class CollectionRepositoryImpl implements CollectionRepository {
     @Value("${collection.saveCollection}")
     private String saveCollectionSql;
 
+    @Value("${collection.deleteById}")
+    private String deleteByIdSql;
+
 
 
     @Override
-    public boolean save(CollectionDto collectionDto, int id) {
-        collectionDto.setId(id);
+    public boolean save(CollectionDto collectionDto ) {
+
         try {
-         jdbcTemplate.update(
-                saveCollectionSql,
-                collectionDto.getId(),
-                collectionDto.getName()
+            int response = jdbcTemplate.update(
+                    saveCollectionSql,
+                    collectionDto.getId(),
+                    collectionDto.getName()
 
-        );
+            );
 
-         return  true;
+            return (response != 1) ? false:true ;
 
         } catch (DataAccessException e) {
             //log.error("Failed to create collection", e);
@@ -49,7 +52,19 @@ public class CollectionRepositoryImpl implements CollectionRepository {
         String maxIdSql = getMaxIdQuery;
         Integer maxId = jdbcTemplate.queryForObject(maxIdSql, Integer.class);
         return  maxId;
-        //return (maxId !=null) ? maxId + 1 : 1 ;
+    }
+
+    @Override
+    public boolean delete(int id) {
+        try {
+                int response = jdbcTemplate.update(deleteByIdSql, id);
+                return response > 0 ? true:false;
+
+        } catch (DataAccessException e) {
+                // log.error("Failed to delete collection", e);
+                throw new RuntimeException("Failed to delete collection", e);
+        }
+
     }
 
 

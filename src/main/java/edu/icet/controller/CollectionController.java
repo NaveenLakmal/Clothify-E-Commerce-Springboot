@@ -19,4 +19,9 @@ public class CollectionController {
     public boolean addCollection(@RequestBody CollectionDto collectionDto){
        return collectionService.addCollection(collectionDto);
     }
+
+    @DeleteMapping("delete/{id}")
+    public  boolean deleteCollectionById(@PathVariable int id){
+        return collectionService.delete(id);
+    }
 }

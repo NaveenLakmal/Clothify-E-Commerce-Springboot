@@ -19,8 +19,14 @@ public class CollectionServiceImpl implements CollectionService {
     @Override
     public boolean addCollection(CollectionDto collectionDto) {
         int id=generateId();
-        return collectionRepository.save(collectionDto,id);
+        collectionDto.setId(id);
+        return collectionRepository.save(collectionDto);
 
+    }
+
+    @Override
+    public boolean delete(int id) {
+        return collectionRepository.delete(id);
     }
 
     private int generateId() {

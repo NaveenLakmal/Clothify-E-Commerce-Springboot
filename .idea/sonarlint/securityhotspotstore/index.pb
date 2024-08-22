@@ -56,3 +56,7 @@ k
 ;src/main/java/edu/icet/controller/CollectionController.java,a\4\a43d1039b941c34c220b39c08c73d211d3c685aa
 t
 Dsrc/main/java/edu/icet/repository/impl/CollectionRepositoryImpl.java,6\3\63683b00a2d959300fbe1845b4804bbdce582d2a
+c
+3src/main/java/edu/icet/service/superBo/SuperBo.java,3\1\31e9c8c7c6d5d35b7e7993ee16c6648453a86ef5
+p
+@src/main/java/edu/icet/repository/superRepo/SuperRepository.java,d\d\ddb70912bb9edfcd51367f68e903774944b720a8

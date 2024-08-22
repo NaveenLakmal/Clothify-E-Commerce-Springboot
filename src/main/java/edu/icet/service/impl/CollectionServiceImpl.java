@@ -29,6 +29,11 @@ public class CollectionServiceImpl implements CollectionService {
         return collectionRepository.delete(id);
     }
 
+    @Override
+    public List<CollectionDto> getAll() {
+        return collectionRepository.getAll();
+    }
+
     private int generateId() {
         Integer id= collectionRepository.getMaxId();
 

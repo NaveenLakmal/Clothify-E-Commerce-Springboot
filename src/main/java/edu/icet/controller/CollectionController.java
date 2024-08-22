@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/collection")
 @CrossOrigin
@@ -23,5 +25,10 @@ public class CollectionController {
     @DeleteMapping("delete/{id}")
     public  boolean deleteCollectionById(@PathVariable int id){
         return collectionService.delete(id);
+    }
+
+    @GetMapping("/get-all")
+    public List<CollectionDto> getAllCollection(){
+        return collectionService.getAll();
     }
 }

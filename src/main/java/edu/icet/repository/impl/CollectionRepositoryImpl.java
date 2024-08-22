@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -25,6 +26,9 @@ public class CollectionRepositoryImpl implements CollectionRepository {
 
     @Value("${collection.deleteById}")
     private String deleteByIdSql;
+
+    @Value("${collection.getAll}")
+    private String getAllSql;
 
 
 
@@ -65,6 +69,16 @@ public class CollectionRepositoryImpl implements CollectionRepository {
                 throw new RuntimeException("Failed to delete collection", e);
         }
 
+    }
+
+
+    public RowMapper<CollectionDto> getCollectionRowMapper(){
+        return new CollectionRowMapper();
+    }
+    @Override
+    public List<CollectionDto> getAll() {
+        List<CollectionDto> collections = jdbcTemplate.query(getAllSql, getCollectionRowMapper());
+        return  collections;
     }
 
 

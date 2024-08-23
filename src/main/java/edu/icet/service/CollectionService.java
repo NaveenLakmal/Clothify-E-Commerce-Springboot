@@ -8,7 +8,7 @@ import java.util.List;
 public interface CollectionService {
     boolean addCollection(CollectionDto collection);
 
-    boolean delete(int id);
+    boolean delete(long id);
 
     List<CollectionDto> getAll();
 

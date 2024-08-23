@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -39,7 +41,19 @@ public class CollectionServiceImpl implements CollectionService {
 
     @Override
     public List<CollectionDto> getAll() {
-        return null;
+        List<CollectionDto> collectionDtoList=new ArrayList<>();
+
+        Iterable<Collection> collections = collectionRepository.findAll();
+
+        Iterator<Collection> collectionIterator = collections.iterator();
+
+        while (collectionIterator.hasNext()){
+            Collection collection = collectionIterator.next();
+            CollectionDto collectionDto = modelMapper.map(collection, CollectionDto.class);
+            collectionDtoList.add(collectionDto);
+        }
+            return collectionDtoList;
+
     }
 
     @Override

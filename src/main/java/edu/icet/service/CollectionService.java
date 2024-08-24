@@ -12,5 +12,5 @@ public interface CollectionService {
 
     List<CollectionDto> getAll();
 
-    boolean updateCollectionById(int id,CollectionDto collectionDto);
+    boolean updateCollectionById(long id,CollectionDto collectionDto);
 }

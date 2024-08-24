@@ -1,4 +1,7 @@
 package edu.icet.repository;
 
-public interface CategoryRepository {
+import edu.icet.entity.Category;
+import org.springframework.data.repository.CrudRepository;
+
+public interface CategoryRepository extends CrudRepository<Category,Long> {
 }

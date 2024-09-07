@@ -11,21 +11,21 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Sales {
+public class Customer {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private long id;
 
     @Column()
-    private double totalPrice;
+    private String name;
 
     @Column()
-    private int totalQty;
+    private String email;
 
-//    @OneToOne(mappedBy = "sales",cascade = CascadeType.ALL)
-//    @JoinColumn(name = "product_id")
-//    private Product product;
+    @Column()
+    private String phoneNumber;
 
-
+    @Column()
+    private String address;
 }

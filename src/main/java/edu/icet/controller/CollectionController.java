@@ -32,6 +32,11 @@ public class CollectionController {
         return collectionService.getAll();
     }
 
+    @GetMapping("/get-one/{id}")
+    public CollectionDto findOne(@PathVariable int id){
+        return collectionService.findOne(id);
+    }
+
     @PatchMapping("update/{id}")
     public boolean updateCollectionById(@PathVariable int id,@RequestBody CollectionDto collectionDto){
         return  collectionService.updateCollectionById(id,collectionDto);

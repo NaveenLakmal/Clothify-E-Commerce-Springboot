@@ -58,6 +58,25 @@ public class CollectionServiceImpl implements CollectionService {
     }
 
     @Override
+    public CollectionDto findOne(long id) {
+        Optional<Collection> existCollection = collectionRepository.findById(id);
+
+
+
+        // Convert Collection entity to CollectionDto and return
+        Collection collection = existCollection.get();
+        return convertToDto(collection);
+    }
+
+    private CollectionDto convertToDto(Collection collection) {
+        CollectionDto dto = new CollectionDto();
+        dto.setId(collection.getId());
+        dto.setName(collection.getName());
+        // Map other fields as needed
+        return dto;
+    }
+
+    @Override
     public boolean updateCollectionById(long id, CollectionDto collectionDto) {
         Optional<Collection> existCollection = collectionRepository.findById(id);
 

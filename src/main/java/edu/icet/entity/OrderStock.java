@@ -11,22 +11,28 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name = "order_stocks")
 public class OrderStock {
 
-   @EmbeddedId
-   private OrderStockId id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-   @ManyToOne
-   @MapsId("orderId")
-   @JoinColumn(name = "order_id")
-   private Orders orders;
+//   @ManyToOne
+//   @MapsId("orderId")
+//   @JoinColumn(name = "order_id")
+//   private Orders orders;
 
-   @ManyToOne
-   @MapsId("stockId")
-   @JoinColumn(name = "stock_id")
+    @ManyToOne
+    @JoinColumn(name = "order_id")
+    private Orders orders;
+
+    @ManyToOne
+    @JoinColumn(name = "stock_id")
     private Stock stock;
 
 
+
     @Column()
-    private int quantity;
+    private Integer quantity;
 }

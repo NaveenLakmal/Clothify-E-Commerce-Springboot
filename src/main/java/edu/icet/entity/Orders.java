@@ -6,9 +6,43 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
+//
+//@Getter
+//@Setter
+//@AllArgsConstructor
+//@NoArgsConstructor
+//@Entity
+//public class Orders {
+//
+//    @Id
+//    @GeneratedValue(strategy =  GenerationType.IDENTITY)
+//    private long id;
+//
+//    @Column()
+//    private String status;
+//
+//    @Column()
+//    private String phoneNumber;
+//
+//    @Column()
+//    private String address;
+//
+//    @Column()
+//    private String city;
+//
+//    @Column()
+//    private double total;
+//
+//    @Column()
+//    private long customerId;
+//
+//    @Column()
+//    private Date date;
+//
+//    @OneToMany(mappedBy = "orders",cascade = CascadeType.ALL)
+//    private Set<OrderStock> orderStocks = new HashSet<>();
+//}
 
 @Getter
 @Setter
@@ -16,32 +50,31 @@ import java.util.Set;
 @NoArgsConstructor
 @Entity
 public class Orders {
-
     @Id
-    @GeneratedValue(strategy =  GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column()
-    private String status;
+    private String status = "";
 
     @Column()
-    private String phoneNumber;
+    private String phoneNumber = "";
 
     @Column()
-    private String address;
+    private String address = "";
 
     @Column()
-    private String city;
+    private String city = "";
 
     @Column()
-    private double total;
+    private double total = 0.0;
 
     @Column()
-    private long customerId;
+    private long customerId = 0;
 
     @Column()
-    private Date date;
+    private Date date = new Date();
 
-    @OneToMany(mappedBy = "orders",cascade = CascadeType.ALL)
-    private Set<OrderStock> orderStocks = new HashSet<>();
+    @OneToMany(mappedBy = "orders", cascade = CascadeType.ALL)
+    private List<OrderStock>orderStocks = new ArrayList<>();
 }

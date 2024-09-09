@@ -6,7 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -36,7 +38,9 @@ public class Stock {
     private long productId;
 
     @OneToMany(mappedBy = "stock",cascade = CascadeType.ALL)
-    private Set<OrderStock> orderStocks = new HashSet<>();
+    private List<OrderStock>orderStocks = new ArrayList<>();
+    // private Set<OrderStock> orderStocks;
+//    private Set<OrderStock> orderStocks = new HashSet<>();
 
 
 }

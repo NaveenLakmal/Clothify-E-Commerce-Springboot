@@ -90,3 +90,5 @@ X
 (src/main/java/edu/icet/dto/StockDto.java,0\8\087fcadab19a64e46d53913b91d4375cdd7ae2e6
 X
 (src/main/java/edu/icet/dto/OrderDto.java,b\6\b6354fb2b78d23f178fdac42a28e4793c8b1174a
+]
+-src/main/java/edu/icet/dto/OrderStockDto.java,d\8\d82a30a032716ab9702330c3a431c611495e50f6

@@ -44,13 +44,15 @@ import java.util.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderDto {
-    private String status = "";
-    private String phoneNumber = "";
-    private String address = "";
-    private String city = "";
-    private double total = 0.0;
-    private long customerId = 0;
-    private Date date = new Date();
-    private List<OrderStockDto> orderStocks;
+    private long id;
+    private String status;
+    private String phoneNumber;
+    private String address;
+    private String city;
+    private double total;
+    private Date date;
+    private List<OrderStockDto> orderStocks; // Assuming you have an OrderStockDto class
+    private long customerId;                  // Storing only the customer ID
+    private PaymentDto payment;               // Assuming you have a PaymentDto class
 }
 

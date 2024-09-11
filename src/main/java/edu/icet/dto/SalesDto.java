@@ -5,15 +5,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategoryDto {
+public class SalesDto {
     private long id;
-    private int parentId;
-    private String name;
-    private List<ProductDto> products;  // Assuming you have a ProductDto class
+    private double totalPrice;
+    private int totalQty;
+    private long productId; // Reference to the Product entity
 }

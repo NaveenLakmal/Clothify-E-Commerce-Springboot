@@ -5,15 +5,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategoryDto {
+public class PaymentDto {
     private long id;
-    private int parentId;
-    private String name;
-    private List<ProductDto> products;  // Assuming you have a ProductDto class
+    private String paymentMethod;
+    private String paymentStatus;
+    private double total;
+    private long orderId; // Reference to the Orders entity
 }

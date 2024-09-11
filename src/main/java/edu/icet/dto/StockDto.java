@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -13,18 +15,13 @@ import lombok.Setter;
 public class StockDto {
 
 
+    private long id;
     private String color;
-
-
     private String size;
-
-
     private int qty;
-
-
     private double price;
-
-
-    private long productId;
+    private long productId; // Reference to the Product entity
+    private List<OrderStockDto> orderStocks; // Assuming you have an OrderStockDto class
+    private List<CartDto> carts; // Assuming you have a CartDto class
 
 }

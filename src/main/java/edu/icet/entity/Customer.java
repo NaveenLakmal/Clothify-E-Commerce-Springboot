@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -28,4 +31,13 @@ public class Customer {
 
     @Column()
     private String address;
+
+    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
+    private List<Orders>  orders;
+
+    @OneToOne(mappedBy = "customer",cascade = CascadeType.ALL)
+    private Cart cart;
+
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private List<BillingInfo> billingInfos = new ArrayList<>();
 }

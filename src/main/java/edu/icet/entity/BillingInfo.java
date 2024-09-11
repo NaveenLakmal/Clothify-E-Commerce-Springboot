@@ -1,5 +1,6 @@
 package edu.icet.entity;
 
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,25 +12,21 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Sales {
+public class BillingInfo {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private long id;
 
-    @Column()
-    private double totalPrice;
-
-    @Column()
-    private int totalQty;
-
-//    @Column(name = "product_id")
-//    private long productId;
+    @OneToOne()
+    @JoinColumn(name = "order_id")
+    private Orders orders;
 
     @OneToOne()
-    @JoinColumn(name = "product_id")
-    private Product product;
+    @JoinColumn(name = "payment_id")
+    private Payment payment;
 
-
-
+    @ManyToOne()
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
 }

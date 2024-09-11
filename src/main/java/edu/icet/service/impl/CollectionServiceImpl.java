@@ -21,9 +21,12 @@ public class CollectionServiceImpl implements CollectionService {
     final ModelMapper modelMapper;
     final CollectionRepository collectionRepository;
 
+
+
     @Override
     public boolean addCollection(CollectionDto collectionDto) {
         Collection collection = modelMapper.map(collectionDto, Collection.class);
+
         return (collectionRepository.save(collection)) != null;
 
 
@@ -70,7 +73,7 @@ public class CollectionServiceImpl implements CollectionService {
 
     private CollectionDto convertToDto(Collection collection) {
         CollectionDto dto = new CollectionDto();
-        dto.setId(collection.getId());
+        //dto.setId(collection.getId());
         dto.setName(collection.getName());
         // Map other fields as needed
         return dto;

@@ -68,8 +68,6 @@ Y
 )src/main/java/edu/icet/entity/Orders.java,a\a\aa0efa9ea2893ca8a4e52a63f04ead435a60f3d4
 ]
 -src/main/java/edu/icet/entity/OrderStock.java,4\2\42bfcb46f21898b0f12ccfc56a708a8a932189bb
-_
-/src/main/java/edu/icet/entity/OrderStockId.java,2\e\2e6dc7ca64c9120fd3303fde3d1159643a092a5d
 f
 6src/main/java/edu/icet/controller/OrderController.java,d\4\d4f711a4990fecb191e69ee31b9e8da90a2b8e42
 f
@@ -92,3 +90,9 @@ X
 (src/main/java/edu/icet/dto/OrderDto.java,b\6\b6354fb2b78d23f178fdac42a28e4793c8b1174a
 ]
 -src/main/java/edu/icet/dto/OrderStockDto.java,d\8\d82a30a032716ab9702330c3a431c611495e50f6
+W
+'src/main/java/edu/icet/entity/Cart.java,6\d\6dfbc14ea9bec2c7ec443395272f654ff1900c8d
+^
+.src/main/java/edu/icet/entity/BillingInfo.java,9\5\95acebeb9ec621aadf6af9e283b8ccc5d5aa14bf
+Z
+*src/main/java/edu/icet/entity/Payment.java,8\f\8f63cf443dc3bca9a0b69d0e0629f7e58e5e0c18

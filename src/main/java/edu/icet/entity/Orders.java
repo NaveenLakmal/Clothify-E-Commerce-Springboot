@@ -69,12 +69,17 @@ public class Orders {
     @Column()
     private double total = 0.0;
 
-    @Column()
-    private long customerId = 0;
 
     @Column()
     private Date date = new Date();
 
     @OneToMany(mappedBy = "orders", cascade = CascadeType.ALL)
     private List<OrderStock>orderStocks = new ArrayList<>();
+
+    @ManyToOne()
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
+
+    @OneToOne(mappedBy = "orders",cascade = CascadeType.ALL)
+    private Payment payment;
 }

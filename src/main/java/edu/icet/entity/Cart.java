@@ -11,25 +11,27 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Sales {
+public class Cart {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private long id;
 
     @Column()
-    private double totalPrice;
+    private double unitPrice;
 
     @Column()
-    private int totalQty;
+    private double grandPrice;
 
-//    @Column(name = "product_id")
-//    private long productId;
+    @Column()
+    private int qty;
+
+    @ManyToOne()
+    @JoinColumn(name = "stock_id")
+    private Stock stock;
+
 
     @OneToOne()
-    @JoinColumn(name = "product_id")
-    private Product product;
-
-
-
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
 }

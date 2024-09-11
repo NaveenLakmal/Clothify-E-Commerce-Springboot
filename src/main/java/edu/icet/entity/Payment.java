@@ -11,25 +11,22 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Sales {
+public class Payment {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private long id;
 
     @Column()
-    private double totalPrice;
+    private String paymentMethod;
 
     @Column()
-    private int totalQty;
+    private String paymentStatus;
 
-//    @Column(name = "product_id")
-//    private long productId;
+    @Column()
+    private double total;
 
     @OneToOne()
-    @JoinColumn(name = "product_id")
-    private Product product;
-
-
-
+    @JoinColumn(name = "order_id")
+    private Orders orders;
 }

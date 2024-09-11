@@ -37,7 +37,7 @@ public class OrderServiceImpl implements OrderService {
         order.setTotal(orderDto.getTotal());
         order.setDate(orderDto.getDate());
         order.setAddress(orderDto.getAddress());
-        order.setCustomerId(orderDto.getCustomerId());
+       // order.setCustomerId(orderDto.getCustomerId());
 
         List<OrderStock> orderStocks=new ArrayList<>();
 

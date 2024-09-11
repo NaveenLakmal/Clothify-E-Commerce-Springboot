@@ -34,11 +34,18 @@ public class Stock {
     @Column()
     private double price;
 
-    @Column()
-    private long productId;
+
+
+    @ManyToOne()
+    @JoinColumn(name = "product_id",insertable = false,updatable = false)
+    private Product product;
 
     @OneToMany(mappedBy = "stock",cascade = CascadeType.ALL)
     private List<OrderStock>orderStocks = new ArrayList<>();
+
+    @OneToMany(mappedBy = "stock",cascade = CascadeType.ALL)
+    private List<Cart> carts;
+
     // private Set<OrderStock> orderStocks;
 //    private Set<OrderStock> orderStocks = new HashSet<>();
 

@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -41,9 +43,14 @@ public class Product {
     @JoinColumn(name = "category_id")
     private Category category;
 
-//    @OneToOne(mappedBy = "product")
-//    private Product product;
+    @OneToOne(mappedBy = "product",cascade = CascadeType.ALL)
+    private Sales sales;
 
+//    @OneToMany(mappedBy = "collection",cascade = CascadeType.ALL)
+//    private List<Product> products;
+
+    @OneToMany(mappedBy = "product",cascade = CascadeType.ALL)
+    private List<Stock> stocks;
 
 
 }

@@ -6,35 +6,31 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Cart {
+public class CartItem {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private long id;
 
     @Column()
+    private int qty;
+
+    @Column()
     private double unitPrice;
 
     @Column()
-    private double grandPrice;
+    private double total;
 
-    @Column()
-    private int qty;
+    @ManyToOne()
+    @JoinColumn(name = "stock_id")
+    private Stock stock;
 
-
-
-    @OneToOne()
-    @JoinColumn(name = "customer_id")
-    private Customer customer;
-
-    @OneToMany(mappedBy = "cart",cascade = CascadeType.ALL)
-    private  List<CartItem> cartItems;
-
+    @ManyToOne()
+    @JoinColumn(name = "cart_id")
+    private Cart cart;
 }

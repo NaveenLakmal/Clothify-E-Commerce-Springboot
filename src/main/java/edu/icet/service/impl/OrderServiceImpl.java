@@ -68,6 +68,26 @@ public class OrderServiceImpl implements OrderService {
 
     }
 
+    @Override
+    public boolean delete(long id) {
+        return false;
+    }
+
+    @Override
+    public List<OrderDto> getAll() {
+        return null;
+    }
+
+    @Override
+    public OrderDto findOne(long id) {
+        return null;
+    }
+
+    @Override
+    public boolean updateCollectionById(long id, OrderDto orderDto) {
+        return false;
+    }
+
    /* public boolean addOrder(OrderDto orderDto) {
 
         Orders order = modelMapper.map(orderDto, Orders.class);

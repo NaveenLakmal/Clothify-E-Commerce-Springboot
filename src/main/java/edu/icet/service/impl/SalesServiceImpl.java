@@ -2,9 +2,11 @@ package edu.icet.service.impl;
 
 import edu.icet.dto.SalesDto;
 import edu.icet.service.SalesService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class SalesServiceImpl implements SalesService {
     @Override
     public boolean addSales(SalesDto salesDto) {

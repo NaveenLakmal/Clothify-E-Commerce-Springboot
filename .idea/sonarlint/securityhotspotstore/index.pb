@@ -114,14 +114,6 @@ h
 8src/main/java/edu/icet/controller/PaymentController.java,6\7\67878719d839d4ff91eeb02ce231fcca5d5ab105
 f
 6src/main/java/edu/icet/controller/SalesController.java,5\6\560e06e776852bab41fa2fdf973066b12090579e
-f
-6src/main/java/edu/icet/repository/CustomerService.java,3\0\30d811c0425a191f63cf32f549fb06caa46d8c60
-e
-5src/main/java/edu/icet/repository/PaymentService.java,5\2\52ba67d72b5df7c310672b6043231c7e976bf0f9
-c
-3src/main/java/edu/icet/repository/SalesService.java,e\d\ed5ad7e1468bf24fee7e5d8c7948ea88cfd5f0b5
-b
-2src/main/java/edu/icet/repository/CartService.java,9\b\9bfc1f6b88fae1331b2ad6bf13d4e46cb4c3e27d
 b
 2src/main/java/edu/icet/service/PaymentService.java,5\9\59854323f00ea31ce5bafc45b653a59807ec859b
 `
@@ -148,3 +140,5 @@ f
 6src/main/java/edu/icet/repository/SalesRepository.java,b\b\bbcd9d8718cdf88182d8410bbb3b6e4130f7fe82
 i
 9src/main/java/edu/icet/repository/CustomerRepository.java,8\6\860aa83d88c4a37a5a46c466a585010f1e660334
+[
++src/main/java/edu/icet/entity/CartItem.java,8\4\84e8c6bd3de573c274aeb3217501c32bd2ed3d01

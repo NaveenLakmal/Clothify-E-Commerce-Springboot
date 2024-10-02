@@ -1,6 +1,7 @@
 package edu.icet.dto;
 
-import jakarta.persistence.Column;
+
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,7 +21,9 @@ public class StockDto {
     private String size;
     private int qty;
     private double price;
-    private long productId; // Reference to the Product entity
+
+    @NotNull(message = "ProductId cannot be null")
+    private Long productId; // Reference to the Product entity
     private List<OrderStockDto> orderStocks; // Assuming you have an OrderStockDto class
     private List<CartDto> carts; // Assuming you have a CartDto class
 
